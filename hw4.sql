@@ -1,6 +1,5 @@
 use zmckee_DB;
 
-DROP TABLE IF EXISTS music_group;
 DROP TABLE IF EXISTS influences;
 DROP TABLE IF EXISTS member_of;
 DROP TABLE IF EXISTS genre;
@@ -77,7 +76,11 @@ CREATE TABLE genre(
 INSERT INTO record_label
 VALUES ('Interscope',1990, 'Major'),
        ('Roswell Records', 1995, 'Major'),
-       ('Atlantic Records', 1947, 'Major');
+       ('Atlantic Records', 1947, 'Major'),
+       ('Republic Records', 1995, 'Major'),
+       ('Indie Records', 1983, 'Independant'),
+       ('Garage Records', 1989, 'Major'),
+       ('Tidal Records', 1985, 'Independant');
 
 INSERT INTO music_group
 VALUES ('Smash Mouth', 1994),
@@ -86,8 +89,13 @@ VALUES ('Smash Mouth', 1994),
 
 INSERT INTO genre
 VALUES ('Smash Mouth', 'Rock'),
+       ('Smash Mouth', 'Alt Rock'),
+       ('Smash Mouth', 'Pop Rock'),
        ('Foo Fighters', 'Alt Rock'),
-       ('Led Zeppelin', 'Classic Rock');
+       ('Foo Fighters', 'Hard Rock'),
+       ('Foo Fighters', 'Grunge'),
+       ('Led Zeppelin', 'Classic Rock'),
+       ('Led Zeppelin', 'Hard Rock');
 
 INSERT INTO influences
 VALUES ('Led Zeppelin', 'Foo Fighters'),
@@ -99,14 +107,16 @@ VALUES ('Steve','Harwell',1967),
        ('Sean','Hurwitz',1979),
        ('Paul','De Lisle',1963),
        ('Michael','Klooster',1969),
-       ('Randy','Cooke',1965);
+       ('Randy','Cooke',1965),
+       ('Smash','Mouth',1950);
 
 INSERT INTO member_of
 VALUES ('Smash Mouth', 'Steve', 'Harwell', 1990, NULL),
        ('Smash Mouth', 'Sean', 'Hurwitz', 2012, NULL),
        ('Smash Mouth', 'Paul', 'De Lisle', 1990, NULL),
        ('Smash Mouth', 'Michael', 'Klooster', 1990, NULL),
-       ('Smash Mouth', 'Randy', 'Cooke', 1990, NULL);
+       ('Smash Mouth', 'Randy', 'Cooke', 1990, NULL),
+       ('Smash Mouth', 'Smash', 'Mouth', 1990, NULL);
 
 /*Smash mouth albums*/
 INSERT INTO album
@@ -121,7 +131,8 @@ VALUES ('Flo', 'Smash Mouth', 'Fush Yu Mang'),
        ('All Star', 'Smash Mouth', 'Astro Lounge'),
        ('Waste', 'Smash Mouth', 'Astro Lounge'),
        ('Home', 'Smash Mouth', 'Astro Lounge'),
-       ('Radio', 'Smash Mouth', 'Astro Lounge');
+       ('Radio', 'Smash Mouth', 'Astro Lounge'),
+       ('The Rain Song', 'Smash Mouth' ,'Astro Lounge');
 
 /*Foo fighters members*/
 INSERT INTO music_artist
@@ -129,14 +140,16 @@ VALUES ('Dave', 'Grohl',1969),
        ('Nate','Mendel',1982),
        ('Pat','Smear',1959),
        ('Taylor','Hawkins',1972),
-       ('Chris','Shiflett',1971);
+       ('Chris','Shiflett',1971),
+       ('Foo', 'Fighters', 1900);
 
 INSERT INTO member_of
 VALUES ('Foo Fighters', 'Dave', 'Grohl',1994,NULL),
        ('Foo Fighters', 'Nate', 'Mendel', 1994, NULL),
        ('Foo Fighters', 'Pat', 'Smear', 1994, NULL),
        ('Foo Fighters', 'Taylor', 'Hawkins', 1996, NULL),
-       ('Foo Fighters', 'Chris', 'Shiflett', 1999, NULL);
+       ('Foo Fighters', 'Chris', 'Shiflett', 1999, NULL),
+       ('Foo Fighters', 'Foo', 'Fighters', 1994, NULL);
 
 /*Foo Fighters songs*/
 INSERT INTO album
@@ -151,20 +164,23 @@ VALUES ('This is a Call', 'Foo Fighters', 'Foo Fighters'),
        ('Doll' , 'Foo Fighters', 'The Colour and the Shape'),
        ('My Hero' , 'Foo Fighters', 'The Colour and the Shape'),
        ('Everlong' , 'Foo Fighters', 'The Colour and the Shape'),
-       ('My Poor Brain' , 'Foo Fighters', 'The Colour and the Shape');
+       ('My Poor Brain' , 'Foo Fighters', 'The Colour and the Shape'),
+       ('You Shook Me', 'Foo Fighters', 'The Colour and the Shape');
 
 /*Led Zeppelin members*/
 INSERT INTO music_artist
 VALUES ('Robert', 'Plant', 1948),
        ('Jimmy', 'Page', 1944),
        ('John', 'Baldwin', 1946),
-       ('John', 'Bonham', 1980);
+       ('John', 'Bonham', 1948);
 
 INSERT INTO member_of
 VALUES ('Led Zeppelin', 'Robert', 'Plant', 1968, 1980),
        ('Led Zeppelin', 'Jimmy', 'Page', 1968, 1980),
        ('Led Zeppelin', 'John', 'Baldwin', 1968, 1980),
-       ('Led Zeppelin', 'John', 'Bonham', 1968, 1980);
+       ('Led Zeppelin', 'John', 'Bonham', 1968, 1980),
+       ('Foo Fighters', 'John', 'Baldwin', 2000, NULL),
+       ('Smash Mouth', 'Jimmy','Page',1990, NULL);
 
 /*Led Zeppelin songs*/
 INSERT INTO album
@@ -174,7 +190,7 @@ VALUES ('Led Zeppelin', 'Led Zeppelin', 1969, 'Atlantic Records'),
        
 INSERT INTO song
 VALUES ('Good Times Bad Times', 'Led Zeppelin', 'Led Zeppelin'),
-       ('Tou Shook Me', 'Led Zeppelin', 'Led Zeppelin'),
+       ('You Shook Me', 'Led Zeppelin', 'Led Zeppelin'),
        ('Communication Breakdown', 'Led Zeppelin', 'Led Zeppelin'),
        ('How Many More Times', 'Led Zeppelin', 'Led Zeppelin'),
        ('The Song Remains the Same', 'Led Zeppelin', 'Houses of the Holy'),
